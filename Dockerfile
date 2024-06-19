@@ -1,4 +1,4 @@
-FROM maven:3.9.6-amazoncorretto-21-debian as build
+FROM maven:3-amazoncorretto-17-debian as build
 
 WORKDIR /app
 RUN ls
