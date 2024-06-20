@@ -20,9 +20,6 @@ public class UsuarioCriacaoDto {
     message = "Campo nome inválido - regex" )
     private String nome;
 
-    @Past(message = "Campo data nascimento deve estar no passado")
-    private LocalDate dtNascimento;
-
     @Size(min = 10, max = 60, message = "Campo email  deve ter min 10 caracteres max 60")
     @Email(message = "Campo email não foi reconhecido como email válido")
     private String email;

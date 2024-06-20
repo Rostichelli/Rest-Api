@@ -8,7 +8,6 @@ public class UsuarioMapper {
     public static Usuario of(UsuarioCriacaoDto usuarioCriacaoDto) {
         Usuario usuario = new Usuario();
         usuario.setEmail(usuarioCriacaoDto.getEmail());
-        usuario.setDtNascimento(usuarioCriacaoDto.getDtNascimento());
         usuario.setNome(usuarioCriacaoDto.getNome());
         usuario.setSenha(usuarioCriacaoDto.getSenha());
         return usuario;

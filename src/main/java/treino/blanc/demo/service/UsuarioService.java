@@ -37,9 +37,7 @@ public class UsuarioService {
     private AuthenticationManager authenticationManager;
 
     public Usuario cadastrar(Usuario novoUsuario) {
-        if (novoUsuario.getNome().equals("tempUser")) {
-            novoUsuario = usuarioUtils.gerarUsuarioTemoporario();
-        } else if (repository.existsByEmail(novoUsuario.getEmail())) {
+        if (repository.existsByEmail(novoUsuario.getEmail())) {
             throw new ResponseStatusException(HttpStatus.CONFLICT, "Email já cadastrado");
         }
 
