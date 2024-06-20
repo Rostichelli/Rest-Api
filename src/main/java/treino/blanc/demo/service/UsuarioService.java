@@ -54,6 +54,11 @@ public class UsuarioService {
         throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Senha incorreta");
     }
 
+
+    public List<Usuario> getAll(){
+        return repository.findAll();
+    }
+
     public UsuarioTokenDto autenticar(UsuarioLoginDTO usuarioLoginDTO) {
         final UsernamePasswordAuthenticationToken credentials = new UsernamePasswordAuthenticationToken(usuarioLoginDTO.getEmail(), usuarioLoginDTO.getSenha());
         System.out.println("Credenciais: " + credentials.getPrincipal());

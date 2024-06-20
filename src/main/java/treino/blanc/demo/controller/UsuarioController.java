@@ -11,6 +11,8 @@ import treino.blanc.demo.mapper.UsuarioMapper;
 import treino.blanc.demo.service.UsuarioService;
 import treino.blanc.demo.utils.UsuarioUtils;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("usuarios")
 public class UsuarioController {
@@ -35,5 +37,11 @@ public class UsuarioController {
         Usuario novoUsuario = UsuarioMapper.of(usuarioCriacaoDto);
         return ResponseEntity.status(201).body(new UsuarioDetalhesCriacaoDto(service.cadastrar(novoUsuario)));
     }
+
+    @GetMapping
+    public ResponseEntity<List<Usuario>> getAll() {
+        return ResponseEntity.status(201).body(service.getAll());
+    }
+
 
 }
