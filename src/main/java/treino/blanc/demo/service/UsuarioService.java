@@ -36,7 +36,6 @@ public class UsuarioService {
     @Autowired
     private AuthenticationManager authenticationManager;
 
-
     public Usuario cadastrar(Usuario novoUsuario) {
         if (novoUsuario.getNome().equals("tempUser")) {
             novoUsuario = usuarioUtils.gerarUsuarioTemoporario();
