@@ -39,6 +39,7 @@ public class UsuarioController {
     }
 
     @GetMapping
+    @SecurityRequirement(name = "Bearer")
     public ResponseEntity<List<Usuario>> getAll() {
         return ResponseEntity.status(201).body(service.getAll());
     }
