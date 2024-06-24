@@ -26,6 +26,7 @@ public class UsuarioController {
 
     @PostMapping("/login")
     public ResponseEntity<UsuarioTokenDto> login(@RequestBody UsuarioLoginDTO usuarioLoginDTO) {
+        System.out.println("Vai fazer o login mesmo ?");
         System.out.println("Dados do usuário toke: " + usuarioLoginDTO.getEmail() + "\n " + usuarioLoginDTO.getSenha());
         UsuarioTokenDto usuarioToken = this.service.autenticar(usuarioLoginDTO);
         System.out.println("Dados do usuário toke: " + usuarioToken.getEmail() + "\n " + usuarioToken.getNome());
