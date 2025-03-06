@@ -30,7 +30,7 @@ public class UsuarioController {
         System.out.println("Dados do usuário toke: " + usuarioLoginDTO.getEmail() + "\n " + usuarioLoginDTO.getSenha());
         UsuarioTokenDto usuarioToken = this.service.autenticar(usuarioLoginDTO);
         System.out.println("Dados do usuário toke: " + usuarioToken.getEmail() + "\n " + usuarioToken.getNome());
-        return ResponseEntity.status(200).body(usuarioToken);
+        return ResponseEntity.status(201).body(usuarioToken);
     }
 
     @PostMapping("/cadastrar")
